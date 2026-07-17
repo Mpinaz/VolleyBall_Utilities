@@ -2,10 +2,54 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Il mio sito</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le mie partite</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+    h1 { text-align: center; }
+    .icone { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+    .icona {
+      cursor: pointer; padding: 20px; border-radius: 12px;
+      background: #f0f0f0; text-align: center; min-width: 100px;
+      font-size: 18px; user-select: none;
+    }
+    .icona:hover { background: #ddd; }
+    #risultato { margin-top: 25px; padding: 15px; border: 1px solid #ccc; border-radius: 8px; }
+    #risultato p { margin: 8px 0; }
+  </style>
 </head>
 <body>
-  <h1>Ciao! Il sito funziona 🎉</h1>
-  <p>Questa è la mia prima pagina su GitHub Pages.</p>
+  <h1>Calendario Partite</h1>
+
+  <div class="icone">
+    <div class="icona" onclick="mostra('serieA')">⚽<br>Serie A</div>
+    <div class="icona" onclick="mostra('champions')">🏆<br>Champions</div>
+    <div class="icona" onclick="mostra('coppa')">🥇<br>Coppa Italia</div>
+  </div>
+
+  <div id="risultato">Clicca su un'icona per vedere le partite.</div>
+
+  <script>
+    let dati = {};
+
+    fetch('dati.json')
+      .then(r => r.json())
+      .then(d => dati = d)
+      .catch(() => {
+        document.getElementById('risultato').innerHTML = 'Errore: file dati.json non trovato.';
+      });
+
+    function mostra(categoria) {
+      const partite = dati[categoria] || [];
+      const box = document.getElementById('risultato');
+      if (partite.length === 0) {
+        box.innerHTML = 'Nessuna partita in questa categoria.';
+        return;
+      }
+      box.innerHTML = partite
+        .map(p => `<p>📅 ${p.data} — <strong>${p.casa}</strong> vs <strong>${p.ospite}</strong></p>`)
+        .join('');
+    }
+  </script>
 </body>
 </html>
