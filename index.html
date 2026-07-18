@@ -1,55 +1,144 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Le mie partite</title>
-  <style>
-    body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; }
-    h1 { text-align: center; }
-    .icone { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
-    .icona {
-      cursor: pointer; padding: 20px; border-radius: 12px;
-      background: #f0f0f0; text-align: center; min-width: 100px;
-      font-size: 18px; user-select: none;
-    }
-    .icona:hover { background: #ddd; }
-    #risultato { margin-top: 25px; padding: 15px; border: 1px solid #ccc; border-radius: 8px; }
-    #risultato p { margin: 8px 0; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volley — Seconda Fase</title>
+<style>
+  :root { --acc:#2563eb; --bg:#f7f8fa; --card:#fff; --bd:#e2e5ea; --mut:#6b7280; }
+  * { box-sizing:border-box; }
+  body { font-family:system-ui,-apple-system,sans-serif; margin:0; padding:16px;
+         background:var(--bg); color:#111; max-width:780px; margin:auto; }
+  h1 { font-size:22px; text-align:center; margin:8px 0 2px; }
+  .agg { text-align:center; color:var(--mut); font-size:13px; margin-bottom:16px; }
+  .tabs { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin-bottom:18px; }
+  .tab { padding:14px 8px; border-radius:12px; background:var(--card); border:1px solid var(--bd);
+         text-align:center; cursor:pointer; font-size:14px; font-weight:600; user-select:none; }
+  .tab.on { background:var(--acc); color:#fff; border-color:var(--acc); }
+  .tab .ico { display:block; font-size:22px; margin-bottom:4px; }
+  select { width:100%; padding:10px; border-radius:8px; border:1px solid var(--bd);
+           margin-bottom:14px; font-size:15px; background:var(--card); }
+  .card { background:var(--card); border:1px solid var(--bd); border-radius:12px;
+          padding:12px 14px; margin-bottom:10px; }
+  .data { font-size:12px; color:var(--mut); margin-bottom:6px; }
+  .sq { display:flex; justify-content:space-between; align-items:center; gap:10px; }
+  .nomi { font-size:15px; }
+  .nomi b { font-weight:700; }
+  .fav { color:var(--acc); }
+  .ris { font-weight:700; font-size:17px; white-space:nowrap; }
+  .set { font-size:12px; color:var(--mut); margin-top:6px; }
+  .pill { font-size:11px; padding:2px 7px; border-radius:20px; background:#eef2ff;
+          color:var(--acc); margin-left:6px; }
+  table { width:100%; border-collapse:collapse; background:var(--card);
+          border-radius:12px; overflow:hidden; border:1px solid var(--bd); font-size:14px; }
+  th,td { padding:9px 6px; text-align:center; border-bottom:1px solid var(--bd); }
+  th { background:#f0f2f5; font-size:11px; text-transform:uppercase; color:var(--mut); }
+  td.nome, th.nome { text-align:left; font-weight:600; }
+  tr.me td { background:#eff6ff; }
+  .vuoto { text-align:center; color:var(--mut); padding:30px 0; }
+</style>
 </head>
 <body>
-  <h1>Calendario Partite</h1>
 
-  <div class="icone">
-    <div class="icona" onclick="mostra('serieA')"><br>Temporary</div>
-    <div class="icona" onclick="mostra('champions')"><br>Calendario</div>
-    <div class="icona" onclick="mostra('coppa')"><br>Classifica</div>
-  </div>
+<h1 id="titolo">Campionato</h1>
+<div class="agg" id="agg"></div>
 
-  <div id="risultato">Clicca su un'icona per vedere le partite.</div>
+<div class="tabs">
+  <div class="tab on" data-v="squadra"><span class="ico">⭐</span>La mia squadra</div>
+  <div class="tab"     data-v="calendario"><span class="ico">📅</span>Calendario</div>
+  <div class="tab"     data-v="classifica"><span class="ico">🏆</span>Classifica</div>
+  <div class="tab"     data-v="tabellone"><span class="ico">📋</span>Tabellone</div>
+</div>
 
-  <script>
-    let dati = {};
+<div id="box"><div class="vuoto">Caricamento…</div></div>
 
-    fetch('dati.json')
-      .then(r => r.json())
-      .then(d => dati = d)
-      .catch(() => {
-        document.getElementById('risultato').innerHTML = 'Errore: file dati.json non trovato.';
-      });
+<script>
+let D = null, vista = 'squadra', mia = null;
 
-    function mostra(categoria) {
-      const partite = dati[categoria] || [];
-      const box = document.getElementById('risultato');
-      if (partite.length === 0) {
-        box.innerHTML = 'Nessuna partita in questa categoria.';
-        return;
-      }
-      box.innerHTML = partite
-        .map(p => `<p>📅 ${p.data} — <strong>${p.casa}</strong> vs <strong>${p.ospite}</strong></p>`)
-        .join('');
-    }
-  </script>
+fetch('dati.json')
+  .then(r => r.json())
+  .then(d => {
+    D = d; mia = d.squadra_preferita;
+    document.getElementById('agg').textContent = 'Aggiornato al ' + d.aggiornato;
+    render();
+  })
+  .catch(() => document.getElementById('box').innerHTML =
+    '<div class="vuoto">Errore nel caricamento di dati.json</div>');
+
+document.querySelectorAll('.tab').forEach(t => t.onclick = () => {
+  document.querySelectorAll('.tab').forEach(x => x.classList.remove('on'));
+  t.classList.add('on');
+  vista = t.dataset.v;
+  render();
+});
+
+// "01-04-2026 21:00:00" -> Date
+function toDate(s) {
+  if (!s) return new Date(0);
+  const [d, o] = s.split(' ');
+  const [gg, mm, aa] = d.split('-');
+  return new Date(`${aa}-${mm}-${gg}T${o || '00:00:00'}`);
+}
+function fmt(s) {
+  const dt = toDate(s);
+  return dt.toLocaleDateString('it-IT', { weekday:'short', day:'2-digit', month:'short' })
+       + ' • ' + dt.toLocaleTimeString('it-IT', { hour:'2-digit', minute:'2-digit' });
+}
+function ordina(a) { return [...a].sort((x, y) => toDate(x.data) - toDate(y.data)); }
+
+function cardPartita(p, mostraSet) {
+  const h = p.casa === mia ? 'fav' : '', o = p.ospite === mia ? 'fav' : '';
+  const ris = p.giocata ? p.risultato.replace('-', ' – ') : '—';
+  const set = mostraSet && p.giocata
+    ? `<div class="set">Set: ${p.set.filter(Boolean).join('  |  ')}</div>` : '';
+  return `<div class="card">
+    <div class="data">${fmt(p.data)}${p.giocata ? '<span class="pill">giocata</span>' : ''}</div>
+    <div class="sq">
+      <div class="nomi"><b class="${h}">${p.casa}</b> vs <b class="${o}">${p.ospite}</b></div>
+      <div class="ris">${ris}</div>
+    </div>${set}</div>`;
+}
+
+function render() {
+  const box = document.getElementById('box');
+  if (!D) return;
+  document.getElementById('titolo').textContent = D.squadra_preferita;
+
+  if (vista === 'classifica') {
+    box.innerHTML = `<table>
+      <tr><th>#</th><th class="nome">Squadra</th><th>Pt</th><th>SV</th><th>SP</th><th>PF</th><th>PS</th></tr>
+      ${D.classifica.map(c => `<tr class="${c.squadra === mia ? 'me' : ''}">
+        <td>${c.posizione}</td><td class="nome">${c.squadra}</td>
+        <td><b>${c.punteggio}</b></td><td>${c.set_vinti}</td><td>${c.set_persi}</td>
+        <td>${c.punti_fatti}</td><td>${c.punti_subiti}</td></tr>`).join('')}
+    </table>`;
+    return;
+  }
+
+  const sel = `<select onchange="mia=this.value;render()">
+    ${D.squadre.map(s => `<option ${s === mia ? 'selected' : ''}>${s}</option>`).join('')}
+  </select>`;
+
+  if (vista === 'squadra') {
+    const mie = ordina(D.partite.filter(p => p.casa === mia || p.ospite === mia));
+    box.innerHTML = sel + (mie.length
+      ? mie.map(p => cardPartita(p, true)).join('')
+      : '<div class="vuoto">Nessuna partita.</div>');
+    return;
+  }
+
+  if (vista === 'calendario') {
+    const f = ordina(D.partite.filter(p => !p.giocata));
+    box.innerHTML = f.length ? f.map(p => cardPartita(p, false)).join('')
+                             : '<div class="vuoto">Nessuna partita in programma.</div>';
+    return;
+  }
+
+  // tabellone: tutte, giocate per prime
+  const g = ordina(D.partite.filter(p => p.giocata)).reverse();
+  const n = ordina(D.partite.filter(p => !p.giocata));
+  box.innerHTML = [...g, ...n].map(p => cardPartita(p, true)).join('');
+}
+</script>
 </body>
 </html>
