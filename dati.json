@@ -1,5 +1,5 @@
 {
-  "aggiornato": "18/07/2026 14:10",
+  "aggiornato": "18/07/2026 15:47",
   "squadra_preferita": "KK THUNDER",
   "squadre": [
     "ALPI STARTER",
@@ -29,6 +29,7 @@
     {
       "posizione": 1,
       "squadra": "KK THUNDER",
+      "giocate": 1,
       "punteggio": 3,
       "set_vinti": 2,
       "set_persi": 1,
@@ -38,6 +39,7 @@
     {
       "posizione": 2,
       "squadra": "KK MAXSTERCLASS",
+      "giocate": 1,
       "punteggio": 1,
       "set_vinti": 1,
       "set_persi": 2,
@@ -46,7 +48,8 @@
     },
     {
       "posizione": 3,
-      "squadra": "ASD SFERA ROSSA",
+      "squadra": "BEAT",
+      "giocate": 0,
       "punteggio": 0,
       "set_vinti": 0,
       "set_persi": 0,
@@ -55,7 +58,8 @@
     },
     {
       "posizione": 4,
-      "squadra": "BEAT",
+      "squadra": "CAM VOLLEY LIVE",
+      "giocate": 0,
       "punteggio": 0,
       "set_vinti": 0,
       "set_persi": 0,
@@ -64,7 +68,8 @@
     },
     {
       "posizione": 5,
-      "squadra": "PINK PANTHERS DUEMILA12",
+      "squadra": "KK LUPO ALBERTO",
+      "giocate": 0,
       "punteggio": 0,
       "set_vinti": 0,
       "set_persi": 0,
@@ -73,7 +78,8 @@
     },
     {
       "posizione": 6,
-      "squadra": "SHARKS ASD",
+      "squadra": "KK 30TMCAP",
+      "giocate": 0,
       "punteggio": 0,
       "set_vinti": 0,
       "set_persi": 0,
@@ -82,7 +88,8 @@
     },
     {
       "posizione": 7,
-      "squadra": "KK PASTE",
+      "squadra": "TODOLOCO",
+      "giocate": 0,
       "punteggio": 0,
       "set_vinti": 0,
       "set_persi": 0,
@@ -91,7 +98,8 @@
     },
     {
       "posizione": 8,
-      "squadra": "MULTIMEDIA MARCONI",
+      "squadra": "KK FOREVER YOUNG",
+      "giocate": 0,
       "punteggio": 0,
       "set_vinti": 0,
       "set_persi": 0,
@@ -100,7 +108,8 @@
     },
     {
       "posizione": 9,
-      "squadra": "CAM VOLLEY LIVE",
+      "squadra": "ASD TECNO-SPORT ORSI",
+      "giocate": 0,
       "punteggio": 0,
       "set_vinti": 0,
       "set_persi": 0,
@@ -109,7 +118,8 @@
     },
     {
       "posizione": 10,
-      "squadra": "ALPI STARTER",
+      "squadra": "ASD SFERA ROSSA",
+      "giocate": 0,
       "punteggio": 0,
       "set_vinti": 0,
       "set_persi": 0,
@@ -118,7 +128,8 @@
     },
     {
       "posizione": 11,
-      "squadra": "DOPOLAVORO ATAC-COTRAL",
+      "squadra": "KK ASTRAVOLLEY",
+      "giocate": 0,
       "punteggio": 0,
       "set_vinti": 0,
       "set_persi": 0,
@@ -127,7 +138,8 @@
     },
     {
       "posizione": 12,
-      "squadra": "KK FOREVER YOUNG",
+      "squadra": "SHARKS ASD",
+      "giocate": 0,
       "punteggio": 0,
       "set_vinti": 0,
       "set_persi": 0,
@@ -136,7 +148,8 @@
     },
     {
       "posizione": 13,
-      "squadra": "ASD TECNO-SPORT ORSI",
+      "squadra": "MULTIMEDIA MARCONI",
+      "giocate": 0,
       "punteggio": 0,
       "set_vinti": 0,
       "set_persi": 0,
@@ -145,7 +158,8 @@
     },
     {
       "posizione": 14,
-      "squadra": "KK 30TMCAP",
+      "squadra": "KK PASTE",
+      "giocate": 0,
       "punteggio": 0,
       "set_vinti": 0,
       "set_persi": 0,
@@ -154,7 +168,8 @@
     },
     {
       "posizione": 15,
-      "squadra": "SANTA MONICA",
+      "squadra": "PINK PANTHERS DUEMILA12",
+      "giocate": 0,
       "punteggio": 0,
       "set_vinti": 0,
       "set_persi": 0,
@@ -163,7 +178,8 @@
     },
     {
       "posizione": 16,
-      "squadra": "ROMA SPORTS",
+      "squadra": "SANTA MONICA",
+      "giocate": 0,
       "punteggio": 0,
       "set_vinti": 0,
       "set_persi": 0,
@@ -172,7 +188,8 @@
     },
     {
       "posizione": 17,
-      "squadra": "KK ASTRAVOLLEY",
+      "squadra": "ROMA SPORTS",
+      "giocate": 0,
       "punteggio": 0,
       "set_vinti": 0,
       "set_persi": 0,
@@ -182,6 +199,7 @@
     {
       "posizione": 18,
       "squadra": "NEW PICCHE",
+      "giocate": 0,
       "punteggio": 0,
       "set_vinti": 0,
       "set_persi": 0,
@@ -190,7 +208,8 @@
     },
     {
       "posizione": 19,
-      "squadra": "KK LUPO ALBERTO",
+      "squadra": "ARVALIA MARCONI",
+      "giocate": 0,
       "punteggio": 0,
       "set_vinti": 0,
       "set_persi": 0,
@@ -199,7 +218,8 @@
     },
     {
       "posizione": 20,
-      "squadra": "ARVALIA MARCONI",
+      "squadra": "DOPOLAVORO ATAC-COTRAL",
+      "giocate": 0,
       "punteggio": 0,
       "set_vinti": 0,
       "set_persi": 0,
@@ -208,7 +228,8 @@
     },
     {
       "posizione": 21,
-      "squadra": "TODOLOCO",
+      "squadra": "ALPI STARTER",
+      "giocate": 0,
       "punteggio": 0,
       "set_vinti": 0,
       "set_persi": 0,
@@ -218,6 +239,7 @@
     {
       "posizione": 22,
       "squadra": "ASD TECNO-SPORT PINGUINI",
+      "giocate": 0,
       "punteggio": 0,
       "set_vinti": 0,
       "set_persi": 0,
