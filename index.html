@@ -1,23 +1,42 @@
+<!-- Come iniziare un doumento HTML -->
 <!DOCTYPE html>
+<!-- Lingua -->
 <html lang="it">
+<!-- Apri Head, Settings invisibili -->
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Volley — Seconda Fase</title>
+
+<!-- CSS, Definisco i colori e varie cazzatine 
+Funziona in questo modo, Variabile {...}, quindi prima chiamo la cosa da modificare (selettore) e poi gli dico come farlo (dichiarazioni)
+nome, chiama tutti gli elementi di quel nome
+.nome, chiama tutte le CLASSI di quel nome
+#nome chiam tutti gli ID con quel nome 
+-->
+
+>
 <style>
-  :root { --acc:#2563eb; --bg:#f7f8fa; --card:#fff; --bd:#e2e5ea; --mut:#6b7280; }
-  * { box-sizing:border-box; }
+  /* Definizione di colori, acc, accento, bg background, card bianco delle schede, bd bordo, mut testo secondario */
+  :root { --acc:#8e9b16; --bg:#f7f8fa; --card:#fff; --bd:#e2e5ea; --mut:#6b7280; }
+  * { box-sizing:border-box; } /* Include il padding, tutto largo come dico io senza padding aggiuntivo*/
+  
+
   body { font-family:system-ui,-apple-system,sans-serif; margin:0; padding:16px;
          background:var(--bg); color:#111; max-width:780px; margin:auto; }
   h1 { font-size:22px; text-align:center; margin:8px 0 2px; }
   .agg { text-align:center; color:var(--mut); font-size:13px; margin-bottom:16px; }
   .tabs { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin-bottom:18px; }
+  /* Icona  */
   .tab { padding:14px 8px; border-radius:12px; background:var(--card); border:1px solid var(--bd);
          text-align:center; cursor:pointer; font-size:14px; font-weight:600; user-select:none; }
-  .tab.on { background:var(--acc); color:#fff; border-color:var(--acc); }
+  /* Icona selezionata */
+  .tab.on { background:var(--acc); color:#ffffffb2; border-color:var(--acc); }
   .tab .ico { display:block; font-size:22px; margin-bottom:4px; }
   select { width:100%; padding:10px; border-radius:8px; border:1px solid var(--bd);
            margin-bottom:14px; font-size:15px; background:var(--card); }
+  /*                            | 1px di dimensione, continuo | angoli arrotondati di 12px| margin-bottom, distacco dalla cella successiva */
   .card { background:var(--card); border:1px solid var(--bd); border-radius:12px;
           padding:12px 14px; margin-bottom:10px; }
   .data { font-size:12px; color:var(--mut); margin-bottom:6px; }
@@ -35,26 +54,60 @@
   th { background:#f0f2f5; font-size:11px; text-transform:uppercase; color:var(--mut); }
   td.nome, th.nome { text-align:left; font-weight:600; }
   tr.me td { background:#eff6ff; }
-  .vuoto { text-align:center; color:var(--mut); padding:30px 0; }
+  .vuoto { text-align:center; color:var(--mut); padding:30px 0;}
+  .next { background:linear-gradient(135deg,#2563eb,#1e40af); color:#fff;
+        border-radius:14px; padding:16px; margin-bottom:14px; }
+  .next .lab { font-size:11px; text-transform:uppercase; opacity:.8; letter-spacing:.5px; }
+  .next .vs { font-size:17px; font-weight:700; margin:6px 0; }
+  .next .quando { font-size:14px; opacity:.95; }
+  .next .cd { font-size:13px; margin-top:8px; background:rgba(255,255,255,.18);
+            display:inline-block; padding:4px 10px; border-radius:20px; }
 </style>
-</head>
-<body>
 
+<!-- Chiudi Head -->
+</head>
+
+<!-- Apri Body (HTML) -->
+<body>
+<!-- Titlo in grande -->
 <h1 id="titolo">Campionato</h1>
+
+<!-- Riga "Aggiornato al" -->
 <div class="agg" id="agg"></div>
 
+<!-- Contenitore per le 4 icone
+classi e id div, gli id sono unici, le classi condivise, i div sono scatole vuote
+
+-->
+
 <div class="tabs">
-  <div class="tab on" data-v="squadra"><span class="ico">⭐</span>La mia squadra</div>
-  <div class="tab"     data-v="calendario"><span class="ico">📅</span>Calendario</div>
-  <div class="tab"     data-v="classifica"><span class="ico">🏆</span>Classifica</div>
-  <div class="tab"     data-v="tabellone"><span class="ico">📋</span>Tabellone</div>
+  <div class="tab on"  data-v="squadra"><span class="ico"></span>Squadre</div>
+  <div class="tab"     data-v="calendario"><span class="ico"></span>Calendario</div>
+  <div class="tab"     data-v="classifica"><span class="ico"></span>Classifica</div>
+  <div class="tab"     data-v="tabellone"><span class="ico"></span>Tabellone</div>
 </div>
 
+<!-- Contenitore dove appare il resto? -->
 <div id="box"><div class="vuoto">Caricamento…</div></div>
 
+<!-- NOTA
+HTML è vuoto, contiene solo le informazioni per costruire i bottoni,
+la parte computazionale è gestita da JavaScript
+-->
+
+<!-- Da qui parte JavaScript -->
 <script>
+
+// Variabili
+// Nota: let sono variabili che POSSONO CAMBIARE, const sono variabili FISSE
+
+// D, tutto il Json
+// vista, icona selezionata
+// mia, squadra scelta
 let D = null, vista = 'squadra', mia = null;
 
+// Scarica i dati dal json
+// quando apri un json deci dirgli cosa fare, ogni step deve avere un nome preciso, .then/ .catch
 fetch('dati.json')
   .then(r => r.json())
   .then(d => {
@@ -62,9 +115,11 @@ fetch('dati.json')
     document.getElementById('agg').textContent = 'Aggiornato al ' + d.aggiornato;
     render();
   })
+//   Except ValueError di Python
   .catch(() => document.getElementById('box').innerHTML =
     '<div class="vuoto">Errore nel caricamento di dati.json</div>');
 
+// Click sulle icone
 document.querySelectorAll('.tab').forEach(t => t.onclick = () => {
   document.querySelectorAll('.tab').forEach(x => x.classList.remove('on'));
   t.classList.add('on');
@@ -72,25 +127,43 @@ document.querySelectorAll('.tab').forEach(t => t.onclick = () => {
   render();
 });
 
-// "01-04-2026 21:00:00" -> Date
+// "01-04-2026 21:00:00" Questo Formato JavaScript non lo capisce, serve smontarlo e rimontarlo
 function toDate(s) {
+//   caso base
   if (!s) return new Date(0);
+//   divide giorno e orario con split, l'orario lo capisce, la data invece va ristrutturata
   const [d, o] = s.split(' ');
+//   Definisce le variabili con uno split
   const [gg, mm, aa] = d.split('-');
+// Ritorna la data, Da notare Ha un formato Date()
+// Inoltre si possono definire gli "and" con ||
   return new Date(`${aa}-${mm}-${gg}T${o || '00:00:00'}`);
 }
+
+// Chiamata della formattazione della data
 function fmt(s) {
   const dt = toDate(s);
   return dt.toLocaleDateString('it-IT', { weekday:'short', day:'2-digit', month:'short' })
        + ' • ' + dt.toLocaleTimeString('it-IT', { hour:'2-digit', minute:'2-digit' });
 }
+
+// Ordinamento delle partite cronologicamente
+// Note                     [...a] significa srotola la lista e copiala
+// Il metodo di ordinamento è una sottrazione delle date x e y, se è negativo x è prima di y etc
 function ordina(a) { return [...a].sort((x, y) => toDate(x.data) - toDate(y.data)); }
 
+
+// Costrusce una scheda
 function cardPartita(p, mostraSet) {
   const h = p.casa === mia ? 'fav' : '', o = p.ospite === mia ? 'fav' : '';
+//   Totalmente estetica questa cosa, invece di 2-1 diventa 2 - 1, altrimenti mette — in caso sia una partita non giocata
+//   Nota replace sostituisce solo la prima occorrenza, non tutto
   const ris = p.giocata ? p.risultato.replace('-', ' – ') : '—';
+//   Mostro i set solo se (mostraSet &&(and) p.giocata)
+// Boolean serve per eliminare elementi null/vuoti nella lista (p.set)
   const set = mostraSet && p.giocata
     ? `<div class="set">Set: ${p.set.filter(Boolean).join('  |  ')}</div>` : '';
+ 
   return `<div class="card">
     <div class="data">${fmt(p.data)}${p.giocata ? '<span class="pill">giocata</span>' : ''}</div>
     <div class="sq">
@@ -99,6 +172,24 @@ function cardPartita(p, mostraSet) {
     </div>${set}</div>`;
 }
 
+function prossima(lista) {
+  const ora = new Date();
+  const fut = lista.filter(p => !p.giocata && toDate(p.data) > ora)
+                   .sort((a,b) => toDate(a.data) - toDate(b.data));
+  if (!fut.length) return '';
+  const p = fut[0];
+  const gg = Math.ceil((toDate(p.data) - ora) / 86400000);
+  const quanto = gg === 0 ? 'Oggi!' : gg === 1 ? 'Domani' : `Tra ${gg} giorni`;
+  return `<div class="next">
+    <div class="lab">Prossima partita</div>
+    <div class="vs">${p.casa} vs ${p.ospite}</div>
+    <div class="quando">${fmt(p.data)}</div>
+    <div class="cd">${quanto}</div>
+  </div>`;
+}
+
+
+// Gestisce cosa visualizzare
 function render() {
   const box = document.getElementById('box');
   if (!D) return;
@@ -119,9 +210,9 @@ function render() {
     ${D.squadre.map(s => `<option ${s === mia ? 'selected' : ''}>${s}</option>`).join('')}
   </select>`;
 
-  if (vista === 'squadra') {
+if (vista === 'squadra') {
     const mie = ordina(D.partite.filter(p => p.casa === mia || p.ospite === mia));
-    box.innerHTML = sel + (mie.length
+    box.innerHTML = prossima(mie) + sel + (mie.length
       ? mie.map(p => cardPartita(p, true)).join('')
       : '<div class="vuoto">Nessuna partita.</div>');
     return;
