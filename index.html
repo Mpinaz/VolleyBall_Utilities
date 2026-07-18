@@ -197,10 +197,11 @@ function render() {
 
   if (vista === 'classifica') {
     box.innerHTML = `<table>
-      <tr><th>#</th><th class="nome">Squadra</th><th>Pt</th><th>SV</th><th>SP</th><th>PF</th><th>PS</th></tr>
+      <tr><th>#</th><th class="nome">Squadra</th><th>#P</th><th>Pt</th><th>SV</th><th>SP</th><th>PF</th><th>PS</th></tr>
       ${D.classifica.map(c => `<tr class="${c.squadra === mia ? 'me' : ''}">
         <td>${c.posizione}</td><td class="nome">${c.squadra}</td>
-        <td><b>${c.punteggio}</b></td><td>${c.set_vinti}</td><td>${c.set_persi}</td>
+        <td>${c.giocate}</td><td><b>${c.punteggio}</b></td>
+        <td>${c.set_vinti}</td><td>${c.set_persi}</td>
         <td>${c.punti_fatti}</td><td>${c.punti_subiti}</td></tr>`).join('')}
     </table>`;
     return;
