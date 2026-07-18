@@ -1,0 +1,1010 @@
+{
+  "aggiornato": "18/07/2026 14:10",
+  "squadra_preferita": "KK THUNDER",
+  "squadre": [
+    "ALPI STARTER",
+    "ARVALIA MARCONI",
+    "ASD SFERA ROSSA",
+    "ASD TECNO-SPORT ORSI",
+    "ASD TECNO-SPORT PINGUINI",
+    "BEAT",
+    "CAM VOLLEY LIVE",
+    "DOPOLAVORO ATAC-COTRAL",
+    "KK 30TMCAP",
+    "KK ASTRAVOLLEY",
+    "KK FOREVER YOUNG",
+    "KK LUPO ALBERTO",
+    "KK MAXSTERCLASS",
+    "KK PASTE",
+    "KK THUNDER",
+    "MULTIMEDIA MARCONI",
+    "NEW PICCHE",
+    "PINK PANTHERS DUEMILA12",
+    "ROMA SPORTS",
+    "SANTA MONICA",
+    "SHARKS ASD",
+    "TODOLOCO"
+  ],
+  "classifica": [
+    {
+      "posizione": 1,
+      "squadra": "KK THUNDER",
+      "punteggio": 3,
+      "set_vinti": 2,
+      "set_persi": 1,
+      "punti_fatti": 60,
+      "punti_subiti": 45
+    },
+    {
+      "posizione": 2,
+      "squadra": "KK MAXSTERCLASS",
+      "punteggio": 1,
+      "set_vinti": 1,
+      "set_persi": 2,
+      "punti_fatti": 45,
+      "punti_subiti": 60
+    },
+    {
+      "posizione": 3,
+      "squadra": "ASD SFERA ROSSA",
+      "punteggio": 0,
+      "set_vinti": 0,
+      "set_persi": 0,
+      "punti_fatti": 0,
+      "punti_subiti": 0
+    },
+    {
+      "posizione": 4,
+      "squadra": "BEAT",
+      "punteggio": 0,
+      "set_vinti": 0,
+      "set_persi": 0,
+      "punti_fatti": 0,
+      "punti_subiti": 0
+    },
+    {
+      "posizione": 5,
+      "squadra": "PINK PANTHERS DUEMILA12",
+      "punteggio": 0,
+      "set_vinti": 0,
+      "set_persi": 0,
+      "punti_fatti": 0,
+      "punti_subiti": 0
+    },
+    {
+      "posizione": 6,
+      "squadra": "SHARKS ASD",
+      "punteggio": 0,
+      "set_vinti": 0,
+      "set_persi": 0,
+      "punti_fatti": 0,
+      "punti_subiti": 0
+    },
+    {
+      "posizione": 7,
+      "squadra": "KK PASTE",
+      "punteggio": 0,
+      "set_vinti": 0,
+      "set_persi": 0,
+      "punti_fatti": 0,
+      "punti_subiti": 0
+    },
+    {
+      "posizione": 8,
+      "squadra": "MULTIMEDIA MARCONI",
+      "punteggio": 0,
+      "set_vinti": 0,
+      "set_persi": 0,
+      "punti_fatti": 0,
+      "punti_subiti": 0
+    },
+    {
+      "posizione": 9,
+      "squadra": "CAM VOLLEY LIVE",
+      "punteggio": 0,
+      "set_vinti": 0,
+      "set_persi": 0,
+      "punti_fatti": 0,
+      "punti_subiti": 0
+    },
+    {
+      "posizione": 10,
+      "squadra": "ALPI STARTER",
+      "punteggio": 0,
+      "set_vinti": 0,
+      "set_persi": 0,
+      "punti_fatti": 0,
+      "punti_subiti": 0
+    },
+    {
+      "posizione": 11,
+      "squadra": "DOPOLAVORO ATAC-COTRAL",
+      "punteggio": 0,
+      "set_vinti": 0,
+      "set_persi": 0,
+      "punti_fatti": 0,
+      "punti_subiti": 0
+    },
+    {
+      "posizione": 12,
+      "squadra": "KK FOREVER YOUNG",
+      "punteggio": 0,
+      "set_vinti": 0,
+      "set_persi": 0,
+      "punti_fatti": 0,
+      "punti_subiti": 0
+    },
+    {
+      "posizione": 13,
+      "squadra": "ASD TECNO-SPORT ORSI",
+      "punteggio": 0,
+      "set_vinti": 0,
+      "set_persi": 0,
+      "punti_fatti": 0,
+      "punti_subiti": 0
+    },
+    {
+      "posizione": 14,
+      "squadra": "KK 30TMCAP",
+      "punteggio": 0,
+      "set_vinti": 0,
+      "set_persi": 0,
+      "punti_fatti": 0,
+      "punti_subiti": 0
+    },
+    {
+      "posizione": 15,
+      "squadra": "SANTA MONICA",
+      "punteggio": 0,
+      "set_vinti": 0,
+      "set_persi": 0,
+      "punti_fatti": 0,
+      "punti_subiti": 0
+    },
+    {
+      "posizione": 16,
+      "squadra": "ROMA SPORTS",
+      "punteggio": 0,
+      "set_vinti": 0,
+      "set_persi": 0,
+      "punti_fatti": 0,
+      "punti_subiti": 0
+    },
+    {
+      "posizione": 17,
+      "squadra": "KK ASTRAVOLLEY",
+      "punteggio": 0,
+      "set_vinti": 0,
+      "set_persi": 0,
+      "punti_fatti": 0,
+      "punti_subiti": 0
+    },
+    {
+      "posizione": 18,
+      "squadra": "NEW PICCHE",
+      "punteggio": 0,
+      "set_vinti": 0,
+      "set_persi": 0,
+      "punti_fatti": 0,
+      "punti_subiti": 0
+    },
+    {
+      "posizione": 19,
+      "squadra": "KK LUPO ALBERTO",
+      "punteggio": 0,
+      "set_vinti": 0,
+      "set_persi": 0,
+      "punti_fatti": 0,
+      "punti_subiti": 0
+    },
+    {
+      "posizione": 20,
+      "squadra": "ARVALIA MARCONI",
+      "punteggio": 0,
+      "set_vinti": 0,
+      "set_persi": 0,
+      "punti_fatti": 0,
+      "punti_subiti": 0
+    },
+    {
+      "posizione": 21,
+      "squadra": "TODOLOCO",
+      "punteggio": 0,
+      "set_vinti": 0,
+      "set_persi": 0,
+      "punti_fatti": 0,
+      "punti_subiti": 0
+    },
+    {
+      "posizione": 22,
+      "squadra": "ASD TECNO-SPORT PINGUINI",
+      "punteggio": 0,
+      "set_vinti": 0,
+      "set_persi": 0,
+      "punti_fatti": 0,
+      "punti_subiti": 0
+    }
+  ],
+  "partite": [
+    {
+      "id": "111",
+      "data": "01-04-2026 21:00:00",
+      "casa": "CAM VOLLEY LIVE",
+      "ospite": "DOPOLAVORO ATAC-COTRAL",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "112",
+      "data": "31-03-2026 20:45:00",
+      "casa": "KK PASTE",
+      "ospite": "MULTIMEDIA MARCONI",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "113",
+      "data": "31-03-2026 21:30:00",
+      "casa": "KK FOREVER YOUNG",
+      "ospite": "KK LUPO ALBERTO",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "114",
+      "data": "01-04-2026 21:00:00",
+      "casa": "PINK PANTHERS DUEMILA12",
+      "ospite": "ASD TECNO-SPORT ORSI",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "115",
+      "data": "31-03-2026 20:50:00",
+      "casa": "TODOLOCO",
+      "ospite": "ARVALIA MARCONI",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "116",
+      "data": "01-04-2026 20:45:00",
+      "casa": "KK THUNDER",
+      "ospite": "KK MAXSTERCLASS",
+      "giocata": true,
+      "risultato": "2-1",
+      "set": [
+        "25-10",
+        "25-10",
+        "10-25"
+      ]
+    },
+    {
+      "id": "117",
+      "data": "14-04-2026 21:15:00",
+      "casa": "MULTIMEDIA MARCONI",
+      "ospite": "KK FOREVER YOUNG",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "118",
+      "data": "17-04-2026 21:00:00",
+      "casa": "PINK PANTHERS DUEMILA12",
+      "ospite": "DOPOLAVORO ATAC-COTRAL",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "119",
+      "data": "13-04-2026 21:15:00",
+      "casa": "ARVALIA MARCONI",
+      "ospite": "KK LUPO ALBERTO",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "120",
+      "data": "16-04-2026 20:45:00",
+      "casa": "ASD TECNO-SPORT ORSI",
+      "ospite": "KK THUNDER",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "121",
+      "data": "14-04-2026 20:45:00",
+      "casa": "KK PASTE",
+      "ospite": "TODOLOCO",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "122",
+      "data": "15-04-2026 21:00:00",
+      "casa": "KK MAXSTERCLASS",
+      "ospite": "CAM VOLLEY LIVE",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "123",
+      "data": "23-04-2026 21:15:00",
+      "casa": "DOPOLAVORO ATAC-COTRAL",
+      "ospite": "MULTIMEDIA MARCONI",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "124",
+      "data": "21-04-2026 21:00:00",
+      "casa": "KK LUPO ALBERTO",
+      "ospite": "ASD TECNO-SPORT ORSI",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "125",
+      "data": "22-04-2026 21:00:00",
+      "casa": "CAM VOLLEY LIVE",
+      "ospite": "KK PASTE",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "126",
+      "data": "22-04-2026 20:45:00",
+      "casa": "KK THUNDER",
+      "ospite": "ARVALIA MARCONI",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "127",
+      "data": "23-04-2026 21:30:00",
+      "casa": "KK FOREVER YOUNG",
+      "ospite": "PINK PANTHERS DUEMILA12",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "128",
+      "data": "23-04-2026 20:50:00",
+      "casa": "TODOLOCO",
+      "ospite": "KK MAXSTERCLASS",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "129",
+      "data": "30-04-2026 21:15:00",
+      "casa": "DOPOLAVORO ATAC-COTRAL",
+      "ospite": "KK THUNDER",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "130",
+      "data": "27-04-2026 21:15:00",
+      "casa": "ARVALIA MARCONI",
+      "ospite": "MULTIMEDIA MARCONI",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "131",
+      "data": "30-04-2026 21:30:00",
+      "casa": "KK FOREVER YOUNG",
+      "ospite": "CAM VOLLEY LIVE",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "132",
+      "data": "01-05-2026 21:00:00",
+      "casa": "PINK PANTHERS DUEMILA12",
+      "ospite": "KK PASTE",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "133",
+      "data": "28-04-2026 20:45:00",
+      "casa": "ASD TECNO-SPORT ORSI",
+      "ospite": "TODOLOCO",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "134",
+      "data": "27-04-2026 21:00:00",
+      "casa": "KK MAXSTERCLASS",
+      "ospite": "KK LUPO ALBERTO",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "135",
+      "data": "05-05-2026 21:00:00",
+      "casa": "KK LUPO ALBERTO",
+      "ospite": "DOPOLAVORO ATAC-COTRAL",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "136",
+      "data": "05-05-2026 21:15:00",
+      "casa": "MULTIMEDIA MARCONI",
+      "ospite": "ASD TECNO-SPORT ORSI",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "137",
+      "data": "06-05-2026 21:00:00",
+      "casa": "CAM VOLLEY LIVE",
+      "ospite": "ARVALIA MARCONI",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "138",
+      "data": "04-05-2026 20:45:00",
+      "casa": "KK PASTE",
+      "ospite": "KK THUNDER",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "139",
+      "data": "07-05-2026 20:50:00",
+      "casa": "TODOLOCO",
+      "ospite": "KK FOREVER YOUNG",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "140",
+      "data": "06-05-2026 21:00:00",
+      "casa": "KK MAXSTERCLASS",
+      "ospite": "PINK PANTHERS DUEMILA12",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "141",
+      "data": "14-05-2026 21:15:00",
+      "casa": "DOPOLAVORO ATAC-COTRAL",
+      "ospite": "TODOLOCO",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "142",
+      "data": "12-05-2026 21:15:00",
+      "casa": "MULTIMEDIA MARCONI",
+      "ospite": "KK MAXSTERCLASS",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "143",
+      "data": "11-05-2026 21:15:00",
+      "casa": "ARVALIA MARCONI",
+      "ospite": "PINK PANTHERS DUEMILA12",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "144",
+      "data": "13-05-2026 20:45:00",
+      "casa": "KK THUNDER",
+      "ospite": "KK FOREVER YOUNG",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "145",
+      "data": "12-05-2026 20:45:00",
+      "casa": "ASD TECNO-SPORT ORSI",
+      "ospite": "CAM VOLLEY LIVE",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "146",
+      "data": "12-05-2026 21:00:00",
+      "casa": "KK LUPO ALBERTO",
+      "ospite": "KK PASTE",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "147",
+      "data": "30-03-2026 21:25:00",
+      "casa": "KK 30TMCAP",
+      "ospite": "ALPI STARTER",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "148",
+      "data": "31-03-2026 21:30:00",
+      "casa": "KK ASTRAVOLLEY",
+      "ospite": "SHARKS ASD",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "149",
+      "data": "31-03-2026 21:00:00",
+      "casa": "SANTA MONICA",
+      "ospite": "ASD TECNO-SPORT PINGUINI",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "150",
+      "data": "03-04-2026 20:45:00",
+      "casa": "NEW PICCHE",
+      "ospite": "ROMA SPORTS",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "151",
+      "data": "31-03-2026 21:00:00",
+      "casa": "BEAT",
+      "ospite": "ASD SFERA ROSSA",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "153",
+      "data": "17-04-2026 21:15:00",
+      "casa": "ALPI STARTER",
+      "ospite": "SHARKS ASD",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "154",
+      "data": "17-04-2026 21:30:00",
+      "casa": "ASD SFERA ROSSA",
+      "ospite": "NEW PICCHE",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "155",
+      "data": "14-04-2026 21:00:00",
+      "casa": "BEAT",
+      "ospite": "SANTA MONICA",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "156",
+      "data": "14-04-2026 21:00:00",
+      "casa": "ASD TECNO-SPORT PINGUINI",
+      "ospite": "KK ASTRAVOLLEY",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "157",
+      "data": "17-04-2026 21:00:00",
+      "casa": "ROMA SPORTS",
+      "ospite": "KK 30TMCAP",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "159",
+      "data": "24-04-2026 21:15:00",
+      "casa": "ALPI STARTER",
+      "ospite": "ASD TECNO-SPORT PINGUINI",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "160",
+      "data": "22-04-2026 21:30:00",
+      "casa": "SHARKS ASD",
+      "ospite": "ROMA SPORTS",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "161",
+      "data": "20-04-2026 21:25:00",
+      "casa": "KK 30TMCAP",
+      "ospite": "ASD SFERA ROSSA",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "162",
+      "data": "21-04-2026 21:30:00",
+      "casa": "KK ASTRAVOLLEY",
+      "ospite": "BEAT",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "165",
+      "data": "28-04-2026 21:00:00",
+      "casa": "BEAT",
+      "ospite": "ALPI STARTER",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "166",
+      "data": "01-05-2026 21:30:00",
+      "casa": "ASD SFERA ROSSA",
+      "ospite": "SHARKS ASD",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "167",
+      "data": "28-04-2026 21:00:00",
+      "casa": "SANTA MONICA",
+      "ospite": "KK 30TMCAP",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "168",
+      "data": "01-05-2026 20:45:00",
+      "casa": "NEW PICCHE",
+      "ospite": "KK ASTRAVOLLEY",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "169",
+      "data": "01-05-2026 21:00:00",
+      "casa": "ROMA SPORTS",
+      "ospite": "ASD TECNO-SPORT PINGUINI",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "171",
+      "data": "06-05-2026 21:30:00",
+      "casa": "SHARKS ASD",
+      "ospite": "SANTA MONICA",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "172",
+      "data": "08-05-2026 21:15:00",
+      "casa": "ALPI STARTER",
+      "ospite": "NEW PICCHE",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "173",
+      "data": "05-05-2026 21:00:00",
+      "casa": "ASD TECNO-SPORT PINGUINI",
+      "ospite": "ASD SFERA ROSSA",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "174",
+      "data": "08-05-2026 21:00:00",
+      "casa": "ROMA SPORTS",
+      "ospite": "BEAT",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "175",
+      "data": "04-05-2026 21:25:00",
+      "casa": "KK 30TMCAP",
+      "ospite": "KK ASTRAVOLLEY",
+      "giocata": false,
+      "risultato": null,
+      "set": [
+        null,
+        null,
+        null
+      ]
+    }
+  ]
+}
