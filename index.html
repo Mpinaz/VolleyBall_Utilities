@@ -219,10 +219,11 @@ if (vista === 'squadra') {
     return;
   }
 
-  if (vista === 'calendario') {
+if (vista === 'calendario') {
     const f = ordina(D.partite.filter(p => !p.giocata));
-    box.innerHTML = f.length ? f.map(p => cardPartita(p, false)).join('')
-                             : '<div class="vuoto">Nessuna partita in programma.</div>';
+    box.innerHTML = sel + (f.length
+      ? f.map(p => cardPartita(p, false)).join('')
+      : '<div class="vuoto">Nessuna partita in programma.</div>');
     return;
   }
 
