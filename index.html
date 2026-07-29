@@ -114,8 +114,8 @@ let D = null, C = null, vista = 'squadra', mia = null;
 // Scarica i dati dal json
 // quando apri un json deci dirgli cosa fare, ogni step deve avere un nome preciso, .then/ .catch
 Promise.all([
-  fetch('dati.json').then(r => r.json()),
-  fetch('squadre.json').then(r => r.json())
+  fetch('dati_partite.json').then(r => r.json()),
+  fetch('Dati_Squadre.json').then(r => r.json())
 ])
   .then(([d, c]) => {
     D = d; C = c; mia = d.squadra_preferita;
