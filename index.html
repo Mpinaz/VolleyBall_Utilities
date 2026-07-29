@@ -111,7 +111,7 @@ let D = null, vista = 'squadra', mia = null;
 
 // Scarica i dati dal json
 // quando apri un json deci dirgli cosa fare, ogni step deve avere un nome preciso, .then/ .catch
-fetch('dati.json')
+fetch('dati_partite.json')
   .then(r => r.json())
   .then(d => {
     D = d; mia = d.squadra_preferita;
