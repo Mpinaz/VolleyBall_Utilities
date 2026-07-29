@@ -209,6 +209,10 @@ function render() {
     </table>`;
     return;
   }
+
+  const sel = `<select onchange="mia=this.value;render()">
+    ${D.squadre.map(s => `<option ${s === mia ? 'selected' : ''}>${s}</option>`).join('')}
+  </select>`;
   
   if (vista === 'squadre') {
     const c = C[mia];
@@ -222,9 +226,7 @@ function render() {
     box.innerHTML = sel + tabella;
     return;
   }
-  const sel = `<select onchange="mia=this.value;render()">
-    ${D.squadre.map(s => `<option ${s === mia ? 'selected' : ''}>${s}</option>`).join('')}
-  </select>`;
+
 
 if (vista === 'squadra') {
     const mie = ordina(D.partite.filter(p => p.casa === mia || p.ospite === mia));
