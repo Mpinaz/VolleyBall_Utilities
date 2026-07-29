@@ -89,6 +89,7 @@ classi e id div, gli id sono unici, le classi condivise, i div sono scatole vuot
   <div class="tab on"  data-v="squadra"><span class="ico"></span>Calendario</div>
   <div class="tab"     data-v="tabellone"><span class="ico"></span>Tabellone</div>
   <div class="tab"     data-v="classifica"><span class="ico"></span>Classifica</div>
+  <div class="tab"     data-v="squadre"><span class="ico"></span>Squadre</div>
 </div>
 
 <!-- Contenitore dove appare il resto? -->
@@ -108,20 +109,21 @@ la parte computazionale è gestita da JavaScript
 // D, tutto il Json
 // vista, icona selezionata
 // mia, squadra scelta
-let D = null, vista = 'squadra', mia = null;
+let D = null, C = null, vista = 'squadra', mia = null;
 
 // Scarica i dati dal json
 // quando apri un json deci dirgli cosa fare, ogni step deve avere un nome preciso, .then/ .catch
-fetch('dati_partite.json')
-  .then(r => r.json())
-  .then(d => {
-    D = d; mia = d.squadra_preferita;
+Promise.all([
+  fetch('dati.json').then(r => r.json()),
+  fetch('squadre.json').then(r => r.json())
+])
+  .then(([d, c]) => {
+    D = d; C = c; mia = d.squadra_preferita;
     document.getElementById('agg').textContent = 'Aggiornato al ' + d.aggiornato;
     render();
   })
-//   Except ValueError di Python
   .catch(() => document.getElementById('box').innerHTML =
-    '<div class="vuoto">Errore nel caricamento di dati.json</div>');
+    '<div class="vuoto">Errore nel caricamento dei dati.</div>');
 
 // Click sulle icone
 document.querySelectorAll('.tab').forEach(t => t.onclick = () => {
@@ -207,7 +209,19 @@ function render() {
     </table>`;
     return;
   }
-
+  
+  if (vista === 'squadre') {
+    const c = C[mia];
+    const tabella = c ? `<table>
+        <tr><th class="nome">Via</th><td>${c.via || '—'}</td></tr>
+        <tr><th class="nome">Referente</th><td>${c.referente || '—'}</td></tr>
+        <tr><th class="nome">Email</th><td>${c.email || '—'}</td></tr>
+        <tr><th class="nome">Telefono</th><td>${c.telefono || '—'}</td></tr>
+      </table>`
+      : '<div class="vuoto">Nessun dato per questa squadra.</div>';
+    box.innerHTML = sel + tabella;
+    return;
+  }
   const sel = `<select onchange="mia=this.value;render()">
     ${D.squadre.map(s => `<option ${s === mia ? 'selected' : ''}>${s}</option>`).join('')}
   </select>`;
