@@ -51,6 +51,8 @@ body { font-family:system-ui,-apple-system,sans-serif; margin:0; padding:16px;
   .set { font-size:12px; color:var(--mut); margin-top:6px; }
   .pill { font-size:11px; padding:2px 7px; border-radius:20px; background:#eef2ff;
           color:var(--acc); margin-left:6px; }
+  .pill-next { font-size:11px; padding:2px 7px; border-radius:20px; background:#fee2e2;
+             color:#dc2626; margin-left:6px; }
   table { width:100%; border-collapse:collapse; background:var(--card);
           border-radius:12px; overflow:hidden; border:1px solid var(--bd); font-size:14px; }
   th,td { padding:9px 6px; text-align:center; border-bottom:1px solid var(--bd); }
@@ -84,9 +86,8 @@ classi e id div, gli id sono unici, le classi condivise, i div sono scatole vuot
 -->
 
 <div class="tabs">
-  <div class="tab on"  data-v="squadra"><span class="ico"></span>Squadre</div>
+  <div class="tab on"  data-v="squadra"><span class="ico"></span>Calendario</div>
   <div class="tab"     data-v="tabellone"><span class="ico"></span>Tabellone</div>
-  <div class="tab"     data-v="calendario"><span class="ico"></span>Calendario</div>
   <div class="tab"     data-v="classifica"><span class="ico"></span>Classifica</div>
 </div>
 
@@ -157,18 +158,15 @@ function ordina(a) { return [...a].sort((x, y) => toDate(x.data) - toDate(y.data
 
 
 // Costrusce una scheda
-function cardPartita(p, mostraSet) {
+function cardPartita(p, mostraSet, isNext) {
   const h = p.casa === mia ? 'fav' : '', o = p.ospite === mia ? 'fav' : '';
-//   Totalmente estetica questa cosa, invece di 2-1 diventa 2 - 1, altrimenti mette — in caso sia una partita non giocata
-//   Nota replace sostituisce solo la prima occorrenza, non tutto
   const ris = p.giocata ? p.risultato.replace('-', ' – ') : '—';
-//   Mostro i set solo se (mostraSet &&(and) p.giocata)
-// Boolean serve per eliminare elementi null/vuoti nella lista (p.set)
   const set = mostraSet && p.giocata
     ? `<div class="set">Set: ${p.set.filter(Boolean).join('  |  ')}</div>` : '';
- 
+  const tag = p.giocata ? '<span class="pill">giocata</span>'
+            : isNext ? '<span class="pill-next">Prossima</span>' : '';
   return `<div class="card">
-    <div class="data">${fmt(p.data)}${p.giocata ? '<span class="pill">giocata</span>' : ''}</div>
+    <div class="data">${fmt(p.data)}${tag}</div>
     <div class="sq">
       <div class="nomi"><b class="${h}">${p.casa}</b> vs <b class="${o}">${p.ospite}</b></div>
       <div class="ris">${ris}</div>
@@ -216,17 +214,11 @@ function render() {
 
 if (vista === 'squadra') {
     const mie = ordina(D.partite.filter(p => p.casa === mia || p.ospite === mia));
-    box.innerHTML = prossima(mie) + sel + (mie.length
-      ? mie.map(p => cardPartita(p, true)).join('')
+    const ora = new Date();
+    const prox = mie.find(p => !p.giocata && toDate(p.data) > ora);
+    box.innerHTML = sel + (mie.length
+      ? mie.map(p => cardPartita(p, true, p === prox)).join('')
       : '<div class="vuoto">Nessuna partita.</div>');
-    return;
-  }
-
-if (vista === 'calendario') {
-    const f = ordina(D.partite.filter(p => !p.giocata));
-    box.innerHTML = sel + (f.length
-      ? f.map(p => cardPartita(p, false)).join('')
-      : '<div class="vuoto">Nessuna partita in programma.</div>');
     return;
   }
 
