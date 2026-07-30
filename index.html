@@ -86,10 +86,10 @@ classi e id div, gli id sono unici, le classi condivise, i div sono scatole vuot
 -->
 
 <div class="tabs">
-  <div class="tab on"  data-v="squadra"><span class="ico"></span>Calendario</div>
+  <div class="tab on"  data-v="Calendario"><span class="ico"></span>Calendario</div>
+  <div class="tab"     data-v="squadre"><span class="ico"></span>Squadre</div>
   <div class="tab"     data-v="tabellone"><span class="ico"></span>Tabellone</div>
   <div class="tab"     data-v="classifica"><span class="ico"></span>Classifica</div>
-  <div class="tab"     data-v="squadre"><span class="ico"></span>Squadre</div>
 </div>
 
 <!-- Contenitore dove appare il resto? -->
@@ -233,7 +233,7 @@ function render() {
   }
 
 
-if (vista === 'squadra') {
+if (vista === 'Calendario') {
     const mie = ordina(D.partite.filter(p => p.casa === mia || p.ospite === mia));
     const ora = new Date();
     const prox = mie.find(p => !p.giocata && toDate(p.data) > ora);
