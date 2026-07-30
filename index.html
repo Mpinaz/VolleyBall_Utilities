@@ -217,7 +217,12 @@ function render() {
   if (vista === 'squadre') {
     const c = C[mia];
     const tabella = c ? `<table>
-        <tr><th class="nome">Via</th><td>${c.via || '—'}</td></tr>
+        <tr><th class="nome">Via</th><td>${(() => {
+          if (!c.via) return '—';
+          const [link, nome] = c.via.split('|').map(s => s.trim());
+          const testo = nome || 'Apri mappa';
+          return `📍 <a href="${link}" target="_blank"> ${testo}</a>`;
+          })()}</td></tr>
         <tr><th class="nome">Referente</th><td>${c.referente || '—'}</td></tr>
         <tr><th class="nome">Email</th><td>${c.email || '—'}</td></tr>
         <tr><th class="nome">Telefono</th><td>${c.telefono || '—'}</td></tr>
