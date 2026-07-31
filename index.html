@@ -23,11 +23,14 @@ nome, chiama tutti gli elementi di quel nome
   * { box-sizing:border-box; } /* Include il padding, tutto largo come dico io senza padding aggiuntivo*/
   
 
-body { font-family:system-ui,-apple-system,sans-serif; margin:0; padding:16px;
-       background-image:url('Pattern.png');
-       background-size:cover;
-       background-attachment:fixed;
-       color:#050505; max-width:780px; margin:auto; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #0d3b54;          /* il blu di fondo */
+  background-image: url('tessera.svg');
+  background-repeat: repeat;          /* affianca in orizzontale e verticale */
+  background-size: 200px;             /* larghezza di una tessera a schermo */
+}
   h1 { font-size:50px; text-align:center; margin:8px 0 2px;
      color:#fcfc08; -webkit-text-stroke:1px #000; }
   .agg { position:fixed; bottom:10px; right:12px; color:#fff; font-size:13px;
