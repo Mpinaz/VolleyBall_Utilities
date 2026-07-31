@@ -21,16 +21,24 @@ nome, chiama tutti gli elementi di quel nome
   /* Definizione di colori, acc, accento, bg background, card bianco delle schede, bd bordo, mut testo secondario */
   :root { --acc:#e4e71c; --bg:#f7f8fa; --card:#fff; --bd:#023B56; --mut:#6b7280; }
   * { box-sizing:border-box; } /* Include il padding, tutto largo come dico io senza padding aggiuntivo*/
-  
 
-body {
+/* Pattern PNG  */
+body { font-family:system-ui,-apple-system,sans-serif; margin:0; padding:16px;
+       background-image:url('Pattern.png');
+       background-size:cover;
+       background-attachment:fixed;
+       color:#050505; max-width:780px; margin:auto; }
+
+/* Pattern Svg  */
+/* body {
   margin: 0;
   min-height: 100vh;
   background-color: #0d3b54;          /* il blu di fondo */
-  background-image: url('pattern.svg');
-  background-repeat: repeat;          /* affianca in orizzontale e verticale */
-  background-size: 200px;             /* larghezza di una tessera a schermo */
-}
+  /* background-image: url('pattern.svg'); */
+  /* background-repeat: repeat;          /* affianca in orizzontale e verticale */ */
+  /* background-size: 200px;             /* larghezza di una tessera a schermo */ */
+} */
+  
   h1 { font-size:50px; text-align:center; margin:8px 0 2px;
      color:#fcfc08; -webkit-text-stroke:1px #000; }
   .agg { position:fixed; bottom:10px; right:12px; color:#fff; font-size:13px;
