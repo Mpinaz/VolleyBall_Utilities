@@ -247,7 +247,7 @@ if (vista === 'Calendario') {
   }
 
   // tabellone: tutte, giocate per prime
-  const g = ordina(D.partite.filter(p => p.giocata)).reverse();
+  const g = ordina(D.partite.filter(p => p.giocata));
   const n = ordina(D.partite.filter(p => !p.giocata));
   box.innerHTML = [...g, ...n].map(p => cardPartita(p, true)).join('');
 }
