@@ -39,15 +39,15 @@ h1 { font-size:50px; text-align:center;
        background:rgba(0,0,0,.35); padding:4px 10px; border-radius:8px; }
   .tabs { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin-bottom:18px; }
   /* Icona  */
-  .tab { padding:14px 8px; border-radius:12px; background:var(--card); border:1px solid var(--bd);
+  .tab { padding:14px 8px; border-radius:12px; background:var(--); border:1px solid var(--bd);
          text-align:center; cursor:pointer; font-size:14px; font-weight:600; user-select:none; }
   /* Icona selezionata */
   .tab.on { background:var(--acc); color:#000000b2; border-color:var(--acc); }
   .tab .ico { display:block; font-size:22px; margin-bottom:4px; }
   select { width:100%; padding:10px; border-radius:8px; border:1px solid var(--bd);
-           margin-bottom:14px; font-size:15px; background:var(--card); }
+           margin-bottom:14px; font-size:15px; background:var(--); }
   /*                            | 1px di dimensione, continuo | angoli arrotondati di 12px| margin-bottom, distacco dalla cella successiva */
-  .card { background:var(--card); border:1px solid var(--bd); border-radius:12px;
+  . { background:var(--); border:1px solid var(--bd); border-radius:12px;
           padding:12px 14px; margin-bottom:10px; }
   .data { font-size:12px; color:var(--mut); margin-bottom:6px; }
   .sq { display:flex; justify-content:space-between; align-items:center; gap:10px; }
@@ -60,7 +60,7 @@ h1 { font-size:50px; text-align:center;
           color:var(--acc); margin-left:6px; }
   .pill-next { font-size:11px; padding:2px 7px; border-radius:20px; background:#fee2e2;
              color:#dc2626; margin-left:6px; }
-table { width:100%; max-width:600px; border-collapse:collapse; background:var(--card);
+table { width:100%; max-width:600px; border-collapse:collapse; background:var(--);
         border-radius:12px; overflow:hidden; border:1px solid var(--bd); font-size:14px;
         margin-left:auto; margin-right:auto; }
   th,td { padding:9px 6px; text-align:center; border-bottom:1px solid var(--bd); }
@@ -75,6 +75,25 @@ table { width:100%; max-width:600px; border-collapse:collapse; background:var(--
   .next .quando { font-size:14px; opacity:.95; }
   .next .cd { font-size:13px; margin-top:8px; background:rgba(255,255,255,.18);
             display:inline-block; padding:4px 10px; border-radius:20px; }
+details.card { padding:0; }                 /* il padding lo mettiamo dentro */
+details.card summary {
+  padding:12px 14px;
+  cursor:pointer;
+  list-style:none;                          /* toglie il triangolino default */
+}
+details.card summary::-webkit-details-marker { display:none; } /* Safari/Chrome */
+details.card summary::after {               /* freccia custom a destra */
+  content:'▾';
+  float:right;
+  transition:transform .2s;
+  color:var(--mut);
+}
+details.card[open] summary::after { transform:rotate(180deg); }
+  .dettaglio { padding:0 14px 12px; }
+  .pill-todo {
+    font-size:11px; padding:2px 7px; border-radius:20px;
+    background:#f0f2f5; color:var(--mut); margin-left:6px;
+}
 </style>
 
 <!-- Chiudi Head -->
@@ -172,16 +191,36 @@ function ordina(a) { return [...a].sort((x, y) => toDate(x.data) - toDate(y.data
 function cardPartita(p, mostraSet, isNext) {
   const h = p.casa === mia ? 'fav' : '', o = p.ospite === mia ? 'fav' : '';
   const ris = p.giocata ? p.risultato.replace('-', ' – ') : '—';
-  const set = mostraSet && p.giocata
-    ? `<div class="set">Set: ${p.set.filter(Boolean).join('  |  ')}</div>` : '';
   const tag = p.giocata ? '<span class="pill">giocata</span>'
-            : isNext ? '<span class="pill-next">Prossima</span>' : '';
-  return `<div class="card">
-    <div class="data">${fmt(p.data)}${tag}</div>
-    <div class="sq">
-      <div class="nomi"><b class="${h}">${p.casa}</b> vs <b class="${o}">${p.ospite}</b></div>
-      <div class="ris">${ris}</div>
-    </div>${set}</div>`;
+            : isNext ? '<span class="pill-next">Prossima</span>'
+            : '<span class="pill-todo">da giocare</span>';
+
+  // Set (solo se giocata e i dati esistono)
+  const set = mostraSet && p.giocata && Array.isArray(p.set)
+    ? `<div class="set">Set: ${p.set.filter(Boolean).join('  |  ')}</div>` : '';
+
+  // Luogo: via della squadra di casa, presa da C
+  const casa = C[p.casa];
+  let luogo = '<div class="set">Luogo: —</div>';
+  if (casa && casa.via) {
+    const [link, nome] = casa.via.split('|').map(s => s.trim());
+    const testo = nome || 'Apri mappa';
+    luogo = `<div class="set">📍 Luogo: <a href="${link}" target="_blank">${testo}</a></div>`;
+  }
+
+  return `<details class="card">
+    <summary>
+      <div class="data">${fmt(p.data)}${tag}</div>
+      <div class="sq">
+        <div class="nomi"><b class="${h}">${p.casa}</b> vs <b class="${o}">${p.ospite}</b></div>
+        <div class="ris">${ris}</div>
+      </div>
+    </summary>
+    <div class="dettaglio">
+      ${luogo}
+      ${set}
+    </div>
+  </details>`;
 }
 
 function prossima(lista) {
