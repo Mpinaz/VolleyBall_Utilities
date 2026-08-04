@@ -39,15 +39,14 @@ h1 { font-size:50px; text-align:center;
        background:rgba(0,0,0,.35); padding:4px 10px; border-radius:8px; }
   .tabs { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin-bottom:18px; }
   /* Icona  */
-  .tab { padding:14px 8px; border-radius:12px; background:var(--); border:1px solid var(--bd);
-         text-align:center; cursor:pointer; font-size:14px; font-weight:600; user-select:none; }
+ .tab { padding:14px 8px; border-radius:12px; background:var(--card); border:1px solid var(--bd);
   /* Icona selezionata */
   .tab.on { background:var(--acc); color:#000000b2; border-color:var(--acc); }
   .tab .ico { display:block; font-size:22px; margin-bottom:4px; }
   select { width:100%; padding:10px; border-radius:8px; border:1px solid var(--bd);
-           margin-bottom:14px; font-size:15px; background:var(--); }
-  /*                            | 1px di dimensione, continuo | angoli arrotondati di 12px| margin-bottom, distacco dalla cella successiva */
-  . { background:var(--); border:1px solid var(--bd); border-radius:12px;
+           margin-bottom:14px; font-size:15px; background:var(--card); }
+  
+  .card { background:var(--card); border:1px solid var(--bd); border-radius:12px;
           padding:12px 14px; margin-bottom:10px; }
   .data { font-size:12px; color:var(--mut); margin-bottom:6px; }
   .sq { display:flex; justify-content:space-between; align-items:center; gap:10px; }
@@ -60,9 +59,7 @@ h1 { font-size:50px; text-align:center;
           color:var(--acc); margin-left:6px; }
   .pill-next { font-size:11px; padding:2px 7px; border-radius:20px; background:#fee2e2;
              color:#dc2626; margin-left:6px; }
-table { width:100%; max-width:600px; border-collapse:collapse; background:var(--);
-        border-radius:12px; overflow:hidden; border:1px solid var(--bd); font-size:14px;
-        margin-left:auto; margin-right:auto; }
+table { width:100%; max-width:600px; border-collapse:collapse; background:var(--card);
   th,td { padding:9px 6px; text-align:center; border-bottom:1px solid var(--bd); }
   th { background:#f0f2f5; font-size:11px; text-transform:uppercase; color:var(--mut); }
   td.nome, th.nome { text-align:left; font-weight:600; }
@@ -75,7 +72,14 @@ table { width:100%; max-width:600px; border-collapse:collapse; background:var(--
   .next .quando { font-size:14px; opacity:.95; }
   .next .cd { font-size:13px; margin-top:8px; background:rgba(255,255,255,.18);
             display:inline-block; padding:4px 10px; border-radius:20px; }
-  details.card { padding:0; background:#fff; }              /* il padding lo mettiamo dentro */
+  details.card {
+  padding:0;
+  background:#fff;
+  border:1px solid var(--bd);
+  border-radius:12px;
+  margin-bottom:10px;
+  overflow:hidden;        /* così gli angoli arrotondati "tagliano" anche summary e dettaglio */
+}
   details.card summary {
     padding:12px 14px;
     cursor:pointer;
